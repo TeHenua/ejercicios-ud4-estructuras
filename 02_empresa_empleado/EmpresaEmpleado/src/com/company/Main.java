@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -76,10 +75,10 @@ public class Main {
         do {
             System.out.print("Introduce el nombre de la empresa: ");
             String nombreEm = br.readLine();
-            for (Empresa empresa : empresas) {
-                if (empresa.getNombre().equalsIgnoreCase(nombreEm)){
+            for (int i = 0; i < empresas.size() && !correcto; i++) {
+                if (empresas.get(i).getNombre().equalsIgnoreCase(nombreEm)){
                     correcto = true;
-                    empresa.addEmpelado(new Empleado(nombre,apellidos,fechaNacimiento,fechaContrato));
+                    empresas.get(i).addEmpelado(new Empleado(nombre,apellidos,fechaNacimiento,fechaContrato));
                 }else {
                     correcto = false;
                 }
