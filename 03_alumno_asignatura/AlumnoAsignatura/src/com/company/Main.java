@@ -47,7 +47,6 @@ public class Main {
                     alumnos.get(alumno).addAsignatura(asignaturas.get(asignatura));
                     break;
                 case 4:
-                    asignaturas.get(0).getNombre()
                     int asig = elegirAsignatura(asignaturas, br);
                     System.out.println("Alumnos matriculados en "+asignaturas.get(asig).getNombre());
                     for(Alumno alu: asignaturas.get(asig).getAlumnos()){
@@ -72,7 +71,7 @@ public class Main {
         }while (opcion!=6);
     }
 
-    public static int elegirAlumno(List alumnos, BufferedReader br) throws IOException {
+    public static int elegirAlumno(List<Alumno> alumnos, BufferedReader br) throws IOException {
         System.out.println("Elige un alumno:");
         for (int i = 0; i < alumnos.size(); i++) {
             System.out.println(i+" "+alumnos.get(i).getNombre());
@@ -81,10 +80,7 @@ public class Main {
         return alumno;
     }
 
-    public static int elegirAsignatura(List asignaturas,BufferedReader br ) throws IOException {
-        Asignatura a = new Asignatura("programacion",6);
-        a.getNombre();
-        asignaturas.get(0)
+    public static int elegirAsignatura(List<Asignatura> asignaturas,BufferedReader br ) throws IOException {
         System.out.println("Elige una asignatura:");
         for (int i = 0; i < asignaturas.size(); i++) {
             System.out.println(i+" "+asignaturas.get(i).getNombre());
