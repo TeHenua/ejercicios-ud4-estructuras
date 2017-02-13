@@ -39,4 +39,12 @@ public class Apunte {
     public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
     }
+
+    @Override
+    public String toString() {
+        return "Apunte{" +
+                "cantidad=" + cantidad +
+                ", fecha='" + fecha + '\'' +
+                '}';
+    }
 }

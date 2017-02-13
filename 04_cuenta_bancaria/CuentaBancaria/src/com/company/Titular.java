@@ -60,4 +60,21 @@ public class Titular {
     public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
+
+    public void imprimirMovimientos(){
+        for (CuentaBancaria cb: cuentaBancarias) {
+            System.out.println(cb);
+            System.out.println("Saldo ->"+ cb.calcularSaldo());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Titular{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", dni='" + dni + '\'' +
+                ", fechaAlta='" + fechaAlta + '\'' +
+                '}';
+    }
 }

@@ -17,6 +17,12 @@ public class CuentaBancaria {
         apuntes = new ArrayList<>();
     }
 
+
+    public void borrarCuenta(){
+        titulares.clear();
+        apuntes.clear();
+    }
+
     public void nuevoApunte(double cantidad){
         Apunte a = new Apunte(cantidad);
         a.setCuentaBancaria(this);
@@ -41,5 +47,20 @@ public class CuentaBancaria {
 
     public void setCodigoCuenta(String codigoCuenta) {
         this.codigoCuenta = codigoCuenta;
+    }
+
+    public double calcularSaldo(){
+        double total = 0;
+        for (Apunte apunte: apuntes) {
+            total+= apunte.getCantidad();
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        return "CuentaBancaria{" +
+                "codigoCuenta='" + codigoCuenta + '\'' +
+                '}';
     }
 }
