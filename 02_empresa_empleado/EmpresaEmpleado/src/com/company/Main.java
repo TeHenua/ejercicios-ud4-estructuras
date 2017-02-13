@@ -35,16 +35,8 @@ public class Main {
                     }
                     break;
                 case 4:
-                    for (Empresa e: empresas ) {
-                        System.out.println("Nombre: "+e.getNombre());
-                        System.out.println("Año de fundación: "+e.getAnyoFundacion());
-                        System.out.println("Empleados:");
-                        for (Empleado empleado: e.getEmpleados()){
-                            System.out.println("  Nombre: "+empleado.getNombre());
-                            System.out.println("  Apellidos: "+empleado.getApellidos());
-                            System.out.println("  Fecha de nacimiento: "+empleado.getFechaNacimiento());
-                            System.out.println("  Fecha de contratación: "+empleado.getFechaContrato());
-                        }
+                    for (Empresa emp: empresas ) {
+                        emp.imprimir();
                     }
                     break;
                 case 5:

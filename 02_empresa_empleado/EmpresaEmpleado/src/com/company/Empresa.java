@@ -11,6 +11,18 @@ public class Empresa {
     private String anyoFundacion;
     private List<Empleado> empleados;
 
+    public void imprimir(){
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Año de fundación: "+anyoFundacion);
+        System.out.println("Empleados:");
+        for (Empleado e: empleados ) {
+            System.out.println("  Nombre: "+e.getNombre());
+            System.out.println("  Apellidos: "+e.getApellidos());
+            System.out.println("  Fecha de nacimiento: "+e.getFechaNacimiento());
+            System.out.println("  Fecha de contratación: "+e.getFechaContrato());
+        }
+    }
+
     public Empresa(String nombre, String anyoFundacion) {
         this.nombre = nombre;
         this.anyoFundacion = anyoFundacion;
