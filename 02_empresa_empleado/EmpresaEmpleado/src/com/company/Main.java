@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -11,7 +12,7 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        ArrayList<Empresa> empresas = new ArrayList<>();
+        List<Empresa> empresas = new ArrayList<>();
 
         int opcion=0;
         do{
@@ -53,7 +54,7 @@ public class Main {
         }while (opcion!=5);
     }
 
-    public static void anadirEmpresa(BufferedReader br, ArrayList<Empresa> empresas) throws IOException {
+    public static void anadirEmpresa(BufferedReader br, List<Empresa> empresas) throws IOException {
         System.out.print("Introduce el nombre: ");
         String nombre = br.readLine();
         System.out.print("Año de fundación: ");
@@ -62,7 +63,7 @@ public class Main {
         empresas.add(e);
     }
 
-    public static void anadirEmpleado(BufferedReader br, ArrayList<Empresa> empresas) throws IOException {
+    public static void anadirEmpleado(BufferedReader br, List<Empresa> empresas) throws IOException {
         System.out.print("Introduce el nombre: ");
         String nombre = br.readLine();
         System.out.print("Introduce los apellidos: ");

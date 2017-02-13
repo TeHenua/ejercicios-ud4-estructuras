@@ -26,7 +26,6 @@ public class Empleado {
         this.empresa = empresa;
     }
 
-
     public String getNombre() {
         return nombre;
     }
