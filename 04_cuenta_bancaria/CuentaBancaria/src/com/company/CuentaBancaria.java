@@ -41,6 +41,12 @@ public class CuentaBancaria {
         return apuntes;
     }
 
+    public void listarTitulares(){
+        for (Titular titular: titulares) {
+            System.out.println(titular.getNombre()+" "+titular.getApellidos());
+        }
+    }
+
     public String getCodigoCuenta() {
         return codigoCuenta;
     }

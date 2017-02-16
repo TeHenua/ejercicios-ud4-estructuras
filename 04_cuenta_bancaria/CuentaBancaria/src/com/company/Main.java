@@ -91,9 +91,7 @@ public class Main {
                     codigo = br.readLine();
                     for (CuentaBancaria cuenta: cuentaBancarias) {
                         if(codigo.equalsIgnoreCase(cuenta.getCodigoCuenta())){
-                            for (Titular titula: titulares) {
-                                System.out.println(titula);
-                            }
+                            cuenta.listarTitulares();
                         }
                     }
                     break;
