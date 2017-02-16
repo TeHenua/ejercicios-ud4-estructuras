@@ -52,20 +52,13 @@ public class Main {
                 case 4: {
                     int asignatura = elegirAsignatura(asignaturas, br);
                     System.out.println("Alumnos matriculados en " + asignaturas.get(asignatura).getNombre());
-                    for (Alumno alu : asignaturas.get(asignatura).getAlumnos()) {
-                        System.out.println(alu.getNombre() + " " + alu.getApellidos());
-                    }
+                    asignaturas.get(asignatura).listarAlumnos();
                 }
                     break;
                 case 5: {
                     int alumno = elegirAlumno(alumnos, br);
                     System.out.println("Asignaturas en las que está matriculado " + alumnos.get(alumno).getNombre() + " " + alumnos.get(alumno).getApellidos());
-                    int totalHoras = 0;
-                    for (Asignatura asignat : alumnos.get(alumno).getAsignaturas()) {
-                        System.out.println(asignat.getNombre());
-                        totalHoras += asignat.getHorasSemanales();
-                    }
-                    System.out.println("Total horas: " + totalHoras);
+                    alumnos.get(alumno).listarAsignaturas();
                 }
                     break;
                 case 6:

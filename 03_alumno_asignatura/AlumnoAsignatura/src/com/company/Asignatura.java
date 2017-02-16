@@ -17,8 +17,10 @@ public class Asignatura {
         alumnos = new ArrayList<>();
     }
 
-    public List<Alumno> getAlumnos() {
-        return alumnos;
+    public void listarAlumnos() {
+        for (Alumno a: alumnos ) {
+            System.out.println(a.getNombre() + " " + a.getApellidos());
+        }
     }
 
     public void addAlumno(Alumno alumno){

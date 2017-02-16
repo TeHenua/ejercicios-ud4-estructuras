@@ -24,9 +24,13 @@ public class Alumno {
         asignatura.addAlumno(this);
     }
 
-
-    public List<Asignatura> getAsignaturas() {
-        return asignaturas;
+    public void listarAsignaturas(){
+        int totalHoras = 0;
+        for (Asignatura a : asignaturas) {
+            System.out.println(a.getNombre());
+            totalHoras += a.getHorasSemanales();
+        }
+        System.out.println("Total horas: " + totalHoras);
     }
 
     public String getNombre() {
