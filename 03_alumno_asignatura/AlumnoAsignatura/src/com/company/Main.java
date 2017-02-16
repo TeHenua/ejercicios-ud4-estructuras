@@ -59,7 +59,7 @@ public class Main {
                     break;
                 case 5: {
                     int alumno = elegirAlumno(alumnos, br);
-                    System.out.println("Asignaturas en las que está matriculado " + alumnos.get(alumno).getNombre() + " " + alumnos.get(alumInt).getApellidos());
+                    System.out.println("Asignaturas en las que está matriculado " + alumnos.get(alumno).getNombre() + " " + alumnos.get(alumno).getApellidos());
                     int totalHoras = 0;
                     for (Asignatura asignat : alumnos.get(alumno).getAsignaturas()) {
                         System.out.println(asignat.getNombre());
