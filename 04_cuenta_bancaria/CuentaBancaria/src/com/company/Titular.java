@@ -21,6 +21,10 @@ public class Titular {
         cuentaBancarias =  new ArrayList<>();
     }
 
+    public void borrarEnlaceCuenta(CuentaBancaria cuenta){
+        cuentaBancarias.remove(cuenta);
+    }
+
     public void addCuentaBancaria(CuentaBancaria cuentaBancaria){
         cuentaBancarias.add(cuentaBancaria);
     }
@@ -61,7 +65,7 @@ public class Titular {
         this.fechaAlta = fechaAlta;
     }
 
-    public void imprimirMovimientos(){
+    public void imprimirSaldos(){
         for (CuentaBancaria cb: cuentaBancarias) {
             System.out.println(cb);
             System.out.println("Saldo ->"+ cb.calcularSaldo());

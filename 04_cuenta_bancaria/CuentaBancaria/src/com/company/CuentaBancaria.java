@@ -19,12 +19,15 @@ public class CuentaBancaria {
 
 
     public void borrarCuenta(){
-        titulares.clear();
+        for (Titular t: titulares) {
+            t.borrarEnlaceCuenta(this);
+        }
         apuntes.clear();
     }
 
     public void nuevoApunte(double cantidad){
         Apunte a = new Apunte(cantidad);
+        apuntes.add(a);
         a.setCuentaBancaria(this);
     }
 

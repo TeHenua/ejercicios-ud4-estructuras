@@ -81,7 +81,7 @@ public class Main {
                     String dniTitu = br.readLine();
                     for (Titular t: titulares) {
                         if(t.getDni().equalsIgnoreCase(dniTitu)){
-                            t.imprimirMovimientos();
+                            t.imprimirSaldos();
                         }
                     }
                     break;
