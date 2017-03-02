@@ -1,10 +1,11 @@
 package com.company;
 
+import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -12,6 +13,12 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Map<Integer, Contacto> listado = new LinkedHashMap<Integer, Contacto>();
         int opcion;
+
+        listado.put(666777777,new Contacto("usue","urruela","tehenua@gmail.com"));
+        listado.put(666778888,new Contacto("lalal","urruela","tehenua@gmail.com"));
+        listado.put(666779999,new Contacto("ososos","urruela","tehenua@gmail.com"));
+
+
         do {
             System.out.println("     Gestión de contactos\n" +
                     "1. Nuevo contacto.\n" +
@@ -26,8 +33,8 @@ public class Main {
 
             opcion = Integer.parseInt(br.readLine());
 
-            switch (opcion){
-                case 1:{
+            switch (opcion) {
+                case 1: {
                     System.out.print("Nª de teléfono: ");
                     Integer numero = Integer.parseInt(br.readLine());
                     System.out.print("Nombre: ");
@@ -36,30 +43,47 @@ public class Main {
                     String apellidos = br.readLine();
                     System.out.print("Email: ");
                     String email = br.readLine();
-                    Contacto c = new Contacto(nombre,apellidos,email);
-                    listado.put(numero,c);
+                    Contacto c = new Contacto(nombre, apellidos, email);
+                    listado.put(numero, c);
                 }
-                    break;
-                case 2:{
+                break;
+                case 2: {
                     System.out.print("Nª de teléfono: ");
                     Integer numero = Integer.parseInt(br.readLine());
                     listado.remove(numero);
                 }
-                    break;
-                case 3:{
+                break;
+                case 3: {
                     System.out.print("Nª de teléfono: ");
                     Integer numero = Integer.parseInt(br.readLine());
                     System.out.println(listado.get(numero));
                 }
-                    break;
-                case 4:
+                break;
+                case 4: {
                     System.out.print("Nombre: ");
                     String nombre = br.readLine();
-                    //listado.forEach((k,v) -> System.out.println("Key: " + k + ": Value: " + v));
+                    for (Map.Entry<Integer, Contacto> entry : listado.entrySet()) {
+                        if (entry.getValue().getNombre().equalsIgnoreCase(nombre)){
+                            System.out.println("Nombre: "+entry.getValue().getNombre());
+                            System.out.println("Apellidos: "+entry.getValue().getApellidos());
+                            System.out.println("Email: "+entry.getValue().getEmail());
+                            System.out.println("Teléfono: "+entry.getKey());
+                        }
+                    }
+                }
+
+                break;
+                case 5:{
+                    Iterator iterator= listado.entrySet().iterator();
+                    while(iterator.hasNext()){
+                        Integer i =(Integer) iterator.next();
+                        System.out.println("  "+listado.get(i));
+                    }
+                }
                     break;
-                case 5:
-                    break;
-                case 6:
+                case 6:{
+
+                }
                     break;
             }
         }while (opcion!=7);

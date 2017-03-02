@@ -38,6 +38,24 @@ public class Contacto {
         this.email = email;
     }
 
+    public Contacto() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contacto contacto = (Contacto) o;
+
+        return nombre != null ? nombre.equals(contacto.nombre) : contacto.nombre == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return nombre != null ? nombre.hashCode() : 0;
+    }
+
     @Override
     public String toString() {
         return "Contacto{" +
