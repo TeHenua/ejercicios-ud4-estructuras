@@ -71,20 +71,20 @@ public class Main {
                         }
                     }
                 }
-
                 break;
                 case 5:{
-                    Iterator iterator= listado.entrySet().iterator();
-                    while(iterator.hasNext()){
-                        Integer i =(Integer) iterator.next();
-                        System.out.println("  "+listado.get(i));
+                    for (Map.Entry<Integer, Contacto> entry : listado.entrySet()) {
+                        System.out.println("Telefono "+entry.getKey()+" Nombre "+entry.getValue().getNombre()
+                        +" Apellidos "+entry.getValue().getApellidos()+" Email "+entry.getValue().getEmail());
                     }
                 }
                     break;
                 case 6:{
+                    Map<Integer,Contacto> ordenados = new TreeMap<>();
+
 
                 }
-                    break;
+                break;
             }
         }while (opcion!=7);
 
