@@ -10,13 +10,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int pin = ThreadLocalRandom.current().nextInt(1, 9999);
-        Alarma a = new Alarma(pin,false);
-        int sensores = ThreadLocalRandom.current().nextInt(1,5);
-        for (int i = 0; i < sensores; i++) {
-            int umbral = ThreadLocalRandom.current().nextInt(1,100);
-            a.addSensores(new SensorMovimiento(umbral));
-        }
+
+        Alarma a = new Alarma();
 
         int opcion;
 
@@ -38,7 +33,7 @@ public class Main {
                 case 2:{
                     for (int i = 3; i >0 && a.isActivada(); i--) {
                         System.out.println("Quedan "+i+" intentos");
-                        pin = Integer.parseInt(br.readLine());
+                        int pin = Integer.parseInt(br.readLine());
                         a.desactivar(pin);
                         if (i==0){
                             System.out.println("ALARMA SONANDO!!");

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by TeHenua on 06/03/2017.
@@ -13,14 +14,19 @@ public class Alarma {
     private int pin;
     private boolean activada;
     private int telefonoAviso;
+    private Random rd = new Random();
 
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     private List<SensorMovimiento> sensores = new ArrayList<>();
 
-    public Alarma(int pin, boolean activada) {
-        this.pin = pin;
-        this.activada = activada;
+    public Alarma() {
+        pin = rd.nextInt(10000);
+        int numSensores = rd.nextInt(5)+1;
+        for (int i = 0; i < numSensores; i++) {
+            int umbral = rd.nextInt(100)+1;
+            addSensores(new SensorMovimiento(umbral));
+        }
     }
 
     public void addSensores(SensorMovimiento sensor){
