@@ -3,7 +3,7 @@ package com.company;
 /**
  * Created by TeHenua on 06/03/2017.
  */
-public class Empleado {
+public abstract class Empleado {
     private String nombre;
     private String apellidos;
     private String fechaNacimiento;

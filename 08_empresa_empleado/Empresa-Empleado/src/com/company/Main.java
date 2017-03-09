@@ -8,6 +8,8 @@ import java.util.List;
 
 public class Main {
 
+
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -45,6 +47,7 @@ public class Main {
                         System.out.println(i+1+" "+empresas.get(i));
                     }
                     int empresaSel = Integer.parseInt(br.readLine())-1;
+                    empresas.get(empresaSel).limpiarEmpleados();
                     empresas.remove(empresaSel);
                 }
                 break;
@@ -101,21 +104,26 @@ public class Main {
                     }
                     int empresaSel = Integer.parseInt(br.readLine())-1;
 
-                    for (Empleado e: empresas.get(empresaSel).getEmpleados()) {
-
+                    empresas.get(empresaSel).listarEmpleados();
+                }
+                break;
+                case 6:{        //Todas las empresas
+                    for (Empresa e: empresas) {
+                        System.out.println(e);
                     }
                 }
                 break;
-                case 6:{
-
+                case 7:{        //Todos los empleados
+                    for (Empresa e: empresas) {
+                        e.listarEmpleados();
+                    }
                 }
                 break;
-                case 7:{
-
-                }
-                break;
-                case 8:{
-
+                case 8:{        //Listado por empresa y empleado
+                    for (Empresa e: empresas) {
+                        System.out.println(e);
+                        e.listarEmpleados();
+                    }
                 }
                 break;
             }

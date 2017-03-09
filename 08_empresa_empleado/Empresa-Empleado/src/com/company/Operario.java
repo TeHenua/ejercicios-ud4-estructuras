@@ -33,6 +33,10 @@ public class Operario extends Empleado {
     @Override
     public String toString() {
         return "Operario{" +
+                "nombre='" + this.getNombre() + '\'' +
+                ", apellidos='" + this.getApellidos() + '\'' +
+                ", fechaNacimiento='" + this.getFechaNacimiento() + '\'' +
+                ", fechaContrato='" + this.getFechaContrato() + '\'' +
                 "salarioHora=" + salarioHora +
                 ", horasContrato=" + horasContrato +
                 '}';

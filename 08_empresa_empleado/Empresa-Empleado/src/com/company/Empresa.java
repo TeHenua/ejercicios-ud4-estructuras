@@ -17,14 +17,28 @@ public class Empresa {
         this.añofundacion = añofundacion;
     }
 
+    public void limpiarEmpleados(){
+        empleados.clear();
+    }
+
     public void addEmpleado(Empleado e){
         empleados.add(e);
         e.setEmpresa(this);
     }
 
-
-    public List<Empleado> getEmpleados() {
-        return empleados;
+    public void listarEmpleados(){
+        for (Empleado e: empleados) {
+            System.out.println(e);
+            if (e.getClass().getCanonicalName().equalsIgnoreCase("com.company.Directivo")){
+                Directivo d = (Directivo) e;
+                System.out.println("Es un directivo, su bonus es: "+d.getBonusPersonal()+
+                " su salario es: "+d.getSalarioAnual());
+            }else{
+                Operario o = (Operario) e;
+                System.out.println("Es un operario, su salario/hora es: "+o.getSalarioHora()+ " sus horas son: "+
+                o.getHorasContrato());
+            }
+        }
     }
 
     public String getNombre() {

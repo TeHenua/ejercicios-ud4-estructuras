@@ -32,6 +32,10 @@ public class Directivo extends Empleado {
     @Override
     public String toString() {
         return "Directivo{" +
+                "nombre='" + this.getNombre() + '\'' +
+                ", apellidos='" + this.getApellidos() + '\'' +
+                ", fechaNacimiento='" + this.getFechaNacimiento() + '\'' +
+                ", fechaContrato='" + this.getFechaContrato() + '\'' +
                 "salarioAnual=" + salarioAnual +
                 ", bonusPersonal=" + bonusPersonal +
                 '}';
